@@ -348,7 +348,17 @@ let travelMethodCounts = {}
 
 // Enter your solution code here:
 
+travelMethodCounts = travelMethods.reduce(function(accumulatorTravel, travelMethod){
+    if (accumulatorTravel[travelMethod]) {
+        accumulatorTravel[travelMethod]++
+    } else {
+        accumulatorTravel[travelMethod] = 1
+    }
 
+// * This also works: accumulatorTravel[travelMethod] = accumulatorTravel[travelMethod] ? accumulator[travelMethod] + 1 : 1
+
+    return accumulatorTravel
+}, {})
 
 // Check your return value:
 console.log('Bonus 2 My Result: ', travelMethodCounts)
